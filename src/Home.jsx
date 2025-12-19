@@ -1,6 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import profileImage from "./Image/image.jpeg";
+import { Link } from "react-router-dom";
 
 const Home = () => {
   return (
@@ -55,7 +56,7 @@ const Home = () => {
             Hire Me
           </motion.button>
 
-          <motion.button
+        <Link to="Projects" ><motion.button
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
             className="px-6 py-3 rounded-xl border border-purple-600 text-purple-600 
@@ -63,6 +64,7 @@ const Home = () => {
           >
             View Projects
           </motion.button>
+          </Link>
         </motion.div>
       </motion.div>
 

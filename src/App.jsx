@@ -1,3 +1,4 @@
+import { Outlet } from "react-router-dom"
 import Home from "./Home"
 import Navbar from "./MobileNav"
 function App() {
@@ -5,8 +6,8 @@ function App() {
   return (
     <>
     <Navbar/>
-    <Home />
-    </>
+    <Outlet/>
+   </>
   )
 }
 
