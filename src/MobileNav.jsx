@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
 import { Twitter, Linkedin, Github, Menu, X } from "lucide-react";
 
 const Navbar = () => {
@@ -7,21 +8,9 @@ const Navbar = () => {
 
   const actions = [
     { path: "/", goTo: "Home" },
-    {
-      path: "https://www.linkedin.com/in/abdullah-hashmi-aa5706290/",
-      goTo: "LinkedIn",
-      logo: <Linkedin size={18} />,
-    },
-    {
-      path: "https://github.com/AbdullahHashmi04",
-      goTo: "Github",
-      logo: <Github size={18} />,
-    },
-    {
-      path: "https://x.com/hashmi486",
-      goTo: "Twitter",
-      logo: <Twitter size={18} />,
-    },
+    { path: "https://www.linkedin.com/in/abdullah-hashmi-aa5706290/", goTo: "LinkedIn", logo: <Linkedin size={18} />},
+    { path: "https://github.com/AbdullahHashmi04", goTo: "Github", logo: <Github size={18} />},
+    {path: "https://x.com/hashmi486",goTo: "Twitter",logo: <Twitter size={18} />}
   ];
 
   return (
@@ -31,9 +20,7 @@ const Navbar = () => {
       transition={{ duration: 0.6 }}
       className="w-full sticky top-0 z-50 backdrop-blur-md bg-white/80 border-b"
     >
-      {/* Main Navbar */}
       <div className="h-20 flex items-center justify-between px-6 md:px-20">
-        {/* Logo */}
         <div className="flex items-center gap-3">
           <motion.div
             whileHover={{ scale: 1.1, rotate: 5 }}
@@ -41,10 +28,9 @@ const Navbar = () => {
           >
             <span className="font-bold text-white">A</span>
           </motion.div>
-          <h1 className="text-2xl font-bold text-gray-800">Portfolio</h1>
+          <h1 className="text-2xl font-bold text-gray-800"><Link to="/">Portfolio</Link></h1>
         </div>
 
-        {/* Desktop Links */}
         <div className="hidden md:flex items-center gap-10">
           {actions.map((link, index) => (
             <motion.a
@@ -68,7 +54,6 @@ const Navbar = () => {
           </motion.a>
         </div>
 
-        {/* Mobile Menu Button */}
         <button
           onClick={() => setOpen(!open)}
           className="md:hidden text-gray-700"
