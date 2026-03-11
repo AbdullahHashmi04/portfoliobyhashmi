@@ -1,14 +1,13 @@
-import { Outlet } from "react-router-dom"
-import Home from "./Home"
-import Navbar from "./MobileNav"
-function App() {
+import { Outlet } from "react-router-dom";
+import Navbar from "./MobileNav";
 
+function App() {
   return (
-    <>
-    <Navbar/>
-    <Outlet/>
-   </>
-  )
+    <div className="bg-[#0a0a1a] min-h-screen">
+      <Navbar />
+      <Outlet />
+    </div>
+  );
 }
 
-export default App
+export default App;
